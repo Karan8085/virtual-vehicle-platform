@@ -1,0 +1,13 @@
+{
+  "name": "Highway Cruise Scenario",
+  "description": "Vehicle cruises at 100 km/h with regular CAN telemetry and Ethernet gateway routing.",
+  "duration_ms": 100.0,
+  "ecu_settings": {
+    "Powertrain_ECU": {
+      "vehicle_speed": 100.0,
+      "engine_rpm": 2800.0
+    }
+  },
+  "fault_schedule": []
+}
+

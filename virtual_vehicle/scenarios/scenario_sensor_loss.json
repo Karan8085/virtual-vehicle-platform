@@ -1,0 +1,19 @@
+{
+  "name": "Wheel Speed Sensor Failure Scenario",
+  "description": "Powertrain sensor broadcast stops at 30ms, causing Brake ECU to detect timeout, log DTC C0031, and switch to DEGRADED mode.",
+  "duration_ms": 120.0,
+  "ecu_settings": {
+    "Powertrain_ECU": {
+      "vehicle_speed": 75.0,
+      "engine_rpm": 2200.0
+    }
+  },
+  "fault_schedule": [
+    {
+      "time_ms": 30.0,
+      "type": "SENSOR_LOSS",
+      "description": "Wheel speed sensor communication failure"
+    }
+  ]
+}
+

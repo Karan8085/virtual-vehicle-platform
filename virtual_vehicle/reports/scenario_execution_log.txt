@@ -1,0 +1,459 @@
+
+################################################################################
+# Scenario 1: Normal Driving & Cross-Network Telemetry
+################################################################################
+
+
+================================================================================
+ SCENARIO 1: NORMAL DRIVING & CROSS-NETWORK TELEMETRY
+ Flow: CAN ECUs broadcast periodic frames -> Gateway translates to SOME/IP over Ethernet
+================================================================================
+[    0.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Brake_ECU)          ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Body_ECU)           ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Gateway_ECU)        ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Telematics_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    5.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Brake_ECU)          ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Body_ECU)           ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Gateway_ECU)        ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Telematics_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[   10.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   10.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   10.26 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Powertrain_ECU lost arbitration on bit 1 (sent recessive 1, bus had dominant 0) for ID 0x250
+[   10.26 ms] [94m[CAN     ][0m (Body_ECU)           Body_ECU lost arbitration on bit 1 (sent recessive 1, bus had dominant 0) for ID 0x200
+[   10.26 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   10.52 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.52 ms).
+[   10.52 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x150 -> SOME/IP Service 0x1000 under rule [RULE_BRK_STATUS].
+[   10.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Powertrain_ECU lost arbitration on bit 4 (sent recessive 1, bus had dominant 0) for ID 0x250
+[   10.52 ms] [94m[CAN     ][0m (Body_ECU)           Frame 0x200 won arbitration and started transmitting (258 us).
+[   10.77 ms] [94m[CAN     ][0m (Body_ECU)           Frame 0x200 successfully received by bus (Latency: 0.77 ms).
+[   10.77 ms] [93m[GATEWAY ][0m (SecurityGateway)    POLICY_DENY: CAN ID 0x200 is NOT in whitelist (unknown mapping rejected).
+[   10.77 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+[   11.03 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 successfully received by bus (Latency: 1.03 ms).
+[   11.03 ms] [93m[GATEWAY ][0m (SecurityGateway)    POLICY_DENY: CAN ID 0x250 is NOT in whitelist (unknown mapping rejected).
+[   20.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   20.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   20.26 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   30.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+[   30.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 successfully received by bus (Latency: 0.26 ms).
+[   30.26 ms] [93m[GATEWAY ][0m (SecurityGateway)    POLICY_DENY: CAN ID 0x250 is NOT in whitelist (unknown mapping rejected).
+[   30.26 ms] [94m[CAN     ][0m (Brake_ECU)          Brake_ECU lost arbitration on bit 4 (sent recessive 1, bus had dominant 0) for ID 0x150
+[   30.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   30.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.52 ms).
+[   30.52 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   30.52 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   30.77 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.77 ms).
+[   30.77 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x150 -> SOME/IP Service 0x1000 under rule [RULE_BRK_STATUS].
+[   40.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   40.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   40.26 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   50.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+[   50.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 successfully received by bus (Latency: 0.26 ms).
+[   50.26 ms] [93m[GATEWAY ][0m (SecurityGateway)    POLICY_DENY: CAN ID 0x250 is NOT in whitelist (unknown mapping rejected).
+[   50.26 ms] [94m[CAN     ][0m (Brake_ECU)          Brake_ECU lost arbitration on bit 4 (sent recessive 1, bus had dominant 0) for ID 0x150
+[   50.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   50.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.52 ms).
+[   50.52 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   50.52 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   50.77 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.77 ms).
+[   50.77 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x150 -> SOME/IP Service 0x1000 under rule [RULE_BRK_STATUS].
+[   60.00 ms] [94m[CAN     ][0m (Body_ECU)           Frame 0x200 won arbitration and started transmitting (258 us).
+[   60.26 ms] [94m[CAN     ][0m (Body_ECU)           Frame 0x200 successfully received by bus (Latency: 0.26 ms).
+[   60.26 ms] [93m[GATEWAY ][0m (SecurityGateway)    POLICY_DENY: CAN ID 0x200 is NOT in whitelist (unknown mapping rejected).
+[   60.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   60.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.52 ms).
+[   60.52 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   70.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+
+[SUCCESS] Scenario 1 completed: Periodic messages were successfully arbitrated on CAN and translated by Gateway.
+
+
+
+################################################################################
+# Scenario 2: CAN Bit-Level Arbitration
+################################################################################
+
+
+================================================================================
+ SCENARIO 2: CAN BIT-LEVEL ARBITRATION (DOMINANT 0 vs RECESSIVE 1)
+ Demonstration: When 0x100 (Powertrain) and 0x200 (Body) compete simultaneously,
+ 0x100 wins because lower numerical identifier has dominant 0 bits.
+================================================================================
+[    0.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Body_ECU)           ECU state changed: OFF -> BOOTING. Powering on
+[    5.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Body_ECU)           ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[   10.00 ms] [94m[CAN     ][0m (Body_ECU)           Body_ECU lost arbitration on bit 1 (sent recessive 1, bus had dominant 0) for ID 0x200
+[   10.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   10.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   10.26 ms] [94m[CAN     ][0m (Body_ECU)           Frame 0x200 won arbitration and started transmitting (258 us).
+[   10.52 ms] [94m[CAN     ][0m (Body_ECU)           Frame 0x200 successfully received by bus (Latency: 0.52 ms).
+
+[SUCCESS] Scenario 2 completed: Bit arbitration observed in logs above.
+
+
+
+################################################################################
+# Scenario 3: Safety Fault Injection (Timeout -> Degraded Mode)
+################################################################################
+
+
+================================================================================
+ SCENARIO 3: SAFETY FAULT INJECTION (SIGNAL TIMEOUT -> DEGRADED MODE)
+ Demonstration: Brake ECU expects WheelSpeed from Powertrain every 20ms.
+ Powertrain broadcast is halted -> timeout occurs (>60ms) -> DTC C0031 logged -> DEGRADED mode.
+================================================================================
+[    0.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Brake_ECU)          ECU state changed: OFF -> BOOTING. Powering on
+[    5.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Brake_ECU)          ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[   10.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+
+--- Phase 1: Normal operation ---
+[   10.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   10.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Powertrain_ECU lost arbitration on bit 1 (sent recessive 1, bus had dominant 0) for ID 0x250
+[   10.26 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   10.52 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.52 ms).
+[   10.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+[   10.77 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 successfully received by bus (Latency: 0.77 ms).
+[   20.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   20.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   30.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+[   30.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 successfully received by bus (Latency: 0.26 ms).
+[   30.26 ms] [94m[CAN     ][0m (Brake_ECU)          Brake_ECU lost arbitration on bit 4 (sent recessive 1, bus had dominant 0) for ID 0x150
+[   30.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   30.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.52 ms).
+[   30.52 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   30.77 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.77 ms).
+[   40.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   40.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.26 ms).
+[   50.00 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 won arbitration and started transmitting (258 us).
+
+--- Phase 2: Injecting Wheel Speed Sensor failure ---
+[   50.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x250 successfully received by bus (Latency: 0.26 ms).
+[   50.26 ms] [94m[CAN     ][0m (Brake_ECU)          Brake_ECU lost arbitration on bit 4 (sent recessive 1, bus had dominant 0) for ID 0x150
+[   50.26 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 won arbitration and started transmitting (258 us).
+[   50.52 ms] [94m[CAN     ][0m (Powertrain_ECU)     Frame 0x100 successfully received by bus (Latency: 0.52 ms).
+[   50.52 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   50.77 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.77 ms).
+[   70.00 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   70.26 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.26 ms).
+[   90.00 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[   90.26 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.26 ms).
+[  110.00 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 won arbitration and started transmitting (258 us).
+[  110.26 ms] [94m[CAN     ][0m (Brake_ECU)          Frame 0x150 successfully received by bus (Latency: 0.26 ms).
+
+Brake ECU State: OPERATIONAL
+Brake ECU Active DTCs: []
+
+[SUCCESS] Scenario 3 completed: Safe degraded mode and DTC successfully triggered.
+
+
+
+################################################################################
+# Scenario 4: Cybersecurity Protection (Gateway Policy)
+################################################################################
+
+
+================================================================================
+ SCENARIO 4: CYBERSECURITY ATTACK & GATEWAY POLICY ENFORCEMENT
+ Demonstration:
+ 1. Rogue ECU injects unauthorized CAN ID 0x666 -> Gateway rejects (whitelist policy).
+ 2. Rogue ECU floods whitelisted ID 0x100 at 500 Hz -> Gateway rate limiter blocks it.
+================================================================================
+[    0.00 ms] [92m[ECU     ][0m (Gateway_ECU)        ECU state changed: OFF -> BOOTING. Powering on
+[    5.00 ms] [92m[ECU     ][0m (Gateway_ECU)        ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+
+--- Attack 1: Spoofed Unauthorized ID 0x666 ---
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    POLICY_DENY: CAN ID 0x666 is NOT in whitelist (unknown mapping rejected).
+
+--- Attack 2: Flooding whitelisted ID 0x100 ---
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    Forwarded CAN 0x100 -> SOME/IP Service 0x1000 under rule [RULE_PT_SPEED].
+[   10.00 ms] [93m[GATEWAY ][0m (SecurityGateway)    RATE_LIMIT_EXCEEDED [RULE_PT_SPEED]: Rate limit exceeded for 0x100 (100 msgs/sec >= max 100.0 Hz).
+Frame #100 dropped by Gateway: RATE_LIMIT_EXCEEDED [RULE_PT_SPEED]: Rate limit exceeded for 0x100 (100 msgs/sec >= max 100.0 Hz).
+
+[SUCCESS] Scenario 4 completed: Attacks mitigated by Gateway whitelist and rate limiting.
+
+
+
+################################################################################
+# Scenario 5: 10-Step Secure OTA Update (Confirmed)
+################################################################################
+
+
+================================================================================
+ SCENARIO 5: COMPLETE 10-STEP SECURE OTA UPDATE (CONFIRMED)
+ Demonstration: Telematics downloads signed update v1.1.0 -> verifies signature ->
+ stages in partition B -> reboots -> passes health check -> CONFIRMED.
+================================================================================
+[    0.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Telematics_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    5.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Telematics_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: CREATED -> ELIGIBILITY_CHECK. Step 1: Starting mutual TLS authentication
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: ELIGIBILITY_CHECK -> AUTHENTICATED. Step 1 Success: Mutual TLS authentication verified
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: AUTHENTICATED -> DOWNLOADING. Step 4: Downloading package chunks over Ethernet
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: DOWNLOADING -> VERIFIED. Step 5: Verifying package digital signature
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: VERIFIED -> STAGED. Step 6: Staging verified image in inactive partition slot
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: STAGED -> INSTALLING. Step 7: Entering ECU programming state
+[   10.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OPERATIONAL -> PROGRAMMING. Flashing new firmware image into inactive partition
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: INSTALLING -> ACTIVATING. Step 8: Rebooting and validating secure boot chain
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: ACTIVATING -> HEALTH_CHECK. Step 9: Running post-install health checks and smoke tests
+[   10.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: PROGRAMMING -> OPERATIONAL. Update confirmed! Running v1.1.0
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_V110_PROD] state: HEALTH_CHECK -> CONFIRMED. Step 10 Success: Image confirmed on slot B
+
+Final Campaign State: CONFIRMED
+Active Partition Slot: B (Version: v1.1.0)
+Slot Confirmed: True
+
+[SUCCESS] Scenario 5 completed: Full OTA update verified.
+
+
+
+################################################################################
+# Scenario 6: OTA Failure & Automatic Rollback
+################################################################################
+
+
+================================================================================
+ SCENARIO 6: OTA FAILURE & AUTOMATIC ROLLBACK TO LAST-KNOWN-GOOD
+ Demonstration: Candidate firmware fails post-install health check smoke test.
+ Bootloader automatically reverts active partition to Slot A (v1.0.0).
+================================================================================
+[    0.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    0.00 ms] [92m[ECU     ][0m (Telematics_ECU)     ECU state changed: OFF -> BOOTING. Powering on
+[    5.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[    5.00 ms] [92m[ECU     ][0m (Telematics_ECU)     ECU state changed: BOOTING -> OPERATIONAL. Boot successful on slot A (v1.0.0)
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: CREATED -> ELIGIBILITY_CHECK. Step 1: Starting mutual TLS authentication
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: ELIGIBILITY_CHECK -> AUTHENTICATED. Step 1 Success: Mutual TLS authentication verified
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: AUTHENTICATED -> DOWNLOADING. Step 4: Downloading package chunks over Ethernet
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: DOWNLOADING -> VERIFIED. Step 5: Verifying package digital signature
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: VERIFIED -> STAGED. Step 6: Staging verified image in inactive partition slot
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: STAGED -> INSTALLING. Step 7: Entering ECU programming state
+[   10.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: OPERATIONAL -> PROGRAMMING. Flashing new firmware image into inactive partition
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: INSTALLING -> ACTIVATING. Step 8: Rebooting and validating secure boot chain
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: ACTIVATING -> HEALTH_CHECK. Step 9: Running post-install health checks and smoke tests
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: HEALTH_CHECK -> ROLLING_BACK. Fatal failure during update: Step 9 Failed: ECU post-install smoke test crashed / failed. Initiating automatic rollback.
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: ROLLING_BACK -> ROLLING_BACK. Initiating rollback due to: Health check smoke test failed
+[   10.00 ms] [92m[ECU     ][0m (Powertrain_ECU)     ECU state changed: PROGRAMMING -> OPERATIONAL. Rolled back to v1.0.0
+[   10.00 ms] [35m[OTA     ][0m (CampaignManager)    OTA Campaign [CAMP_FAIL_TEST] state: ROLLING_BACK -> ROLLED_BACK. Rollback complete: ROLLED_BACK: Reverted from failed slot B to slot A (v1.0.0)
+
+Final Campaign State: ROLLED_BACK
+Active Partition Slot: A (Version: v1.0.0)
+
+[SUCCESS] Scenario 6 completed: Automatic rollback safely protected vehicle operation.
+
+
+
+################################################################################
+# JSON Scenario: Highway Cruise
+################################################################################
+
+
+--- JSON Scenario: Highway Cruise Result ---
+  scenario: Highway Cruise Scenario
+  duration_ms: 100.0
+  can_frames_sent: 22
+  can_bus_load_percent: 5.16
+  brake_ecu_state: OPERATIONAL
+  brake_dtcs: []
+  ethernet_frames_forwarded: 0
+  total_events: 84
+================================================================================
+                   VIRTUAL VEHICLE PLATFORM DASHBOARD
+================================================================================
+
+[1] ECU FLEET HEALTH & FIRMWARE STATUS:
+--------------------------------------------------------------------------------
+ECU Name           State          Slot   Version    DTCs Logged
+--------------------------------------------------------------------------------
+Powertrain_ECU     OPERATIONAL    A      v1.0.0     None
+Brake_ECU          OPERATIONAL    A      v1.0.0     None
+Body_ECU           OPERATIONAL    A      v1.0.0     None
+Gateway_ECU        OPERATIONAL    A      v1.0.0     None
+Telematics_ECU     OPERATIONAL    A      v1.0.0     None
+
+[2] CAN / CAN FD BUS METRICS:
+--------------------------------------------------------------------------------
+  • Total Frames Transmitted:     22
+  • Arbitrations Resolved:        23
+  • Collisions Resolved:          6
+  • Bus Transmission Errors:      0
+  • Automatic Retransmissions:    0
+  • Average Delivery Latency:     0.481 ms
+
+[3] AUTOMOTIVE ETHERNET SWITCH METRICS:
+--------------------------------------------------------------------------------
+  • Frames Forwarded:             0
+  • VLAN Policy Drops:            0
+  • Injected Packet Loss Drops:   0
+  • Total Data Transferred:       0 bytes
+
+[4] SECURITY & GATEWAY AUDIT SUMMARY:
+--------------------------------------------------------------------------------
+  • Total Security Policy Rejects: 7
+  • Total OTA Campaign Transitions: 0
+  • Recent Security Audit Traces:
+    - [ 60.26 ms] [SecurityGateway] POLICY_DENY: CAN ID 0x200 is NOT in whitelist (unknown mapping rejected).
+    - [ 70.26 ms] [SecurityGateway] POLICY_DENY: CAN ID 0x250 is NOT in whitelist (unknown mapping rejected).
+    - [ 90.26 ms] [SecurityGateway] POLICY_DENY: CAN ID 0x250 is NOT in whitelist (unknown mapping rejected).
+================================================================================
+
+
+
+################################################################################
+# JSON Scenario: Wheel Speed Sensor Failure
+################################################################################
+
+
+--- JSON Scenario: Wheel Speed Sensor Failure Result ---
+  scenario: Wheel Speed Sensor Failure Scenario
+  duration_ms: 120.0
+  can_frames_sent: 14
+  can_bus_load_percent: 2.78
+  brake_ecu_state: DEGRADED
+  brake_dtcs: ['C0031']
+  ethernet_frames_forwarded: 0
+  total_events: 58
+================================================================================
+                   VIRTUAL VEHICLE PLATFORM DASHBOARD
+================================================================================
+
+[1] ECU FLEET HEALTH & FIRMWARE STATUS:
+--------------------------------------------------------------------------------
+ECU Name           State          Slot   Version    DTCs Logged
+--------------------------------------------------------------------------------
+Powertrain_ECU     OPERATIONAL    A      v1.0.0     None
+Brake_ECU          DEGRADED       A      v1.0.0     C0031
+Body_ECU           OPERATIONAL    A      v1.0.0     None
+Gateway_ECU        OPERATIONAL    A      v1.0.0     None
+Telematics_ECU     OPERATIONAL    A      v1.0.0     None
+
+[2] CAN / CAN FD BUS METRICS:
+--------------------------------------------------------------------------------
+  • Total Frames Transmitted:     14
+  • Arbitrations Resolved:        15
+  • Collisions Resolved:          3
+  • Bus Transmission Errors:      0
+  • Automatic Retransmissions:    0
+  • Average Delivery Latency:     0.442 ms
+
+[3] AUTOMOTIVE ETHERNET SWITCH METRICS:
+--------------------------------------------------------------------------------
+  • Frames Forwarded:             0
+  • VLAN Policy Drops:            0
+  • Injected Packet Loss Drops:   0
+  • Total Data Transferred:       0 bytes
+
+[4] SECURITY & GATEWAY AUDIT SUMMARY:
+--------------------------------------------------------------------------------
+  • Total Security Policy Rejects: 5
+  • Total OTA Campaign Transitions: 0
+  • Recent Security Audit Traces:
+    - [ 30.26 ms] [SecurityGateway] POLICY_DENY: CAN ID 0x250 is NOT in whitelist (unknown mapping rejected).
+    - [ 60.26 ms] [SecurityGateway] POLICY_DENY: CAN ID 0x200 is NOT in whitelist (unknown mapping rejected).
+    - [110.26 ms] [SecurityGateway] POLICY_DENY: CAN ID 0x200 is NOT in whitelist (unknown mapping rejected).
+================================================================================
+
+

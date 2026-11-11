@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-11-11 17:47:50",
+  "total_passed": 22,
+  "total_failed": 0,
+  "elapsed_seconds": 0.004,
+  "suites": [
+    {
+      "suite": "Suite A: CAN / CAN FD Protocol & SecOC",
+      "tests_run": 4,
+      "passed": 4,
+      "failed": 0,
+      "status": "PASSED"
+    },
+    {
+      "suite": "Suite B: Automotive Ethernet & Gateway Routing",
+      "tests_run": 5,
+      "passed": 5,
+      "failed": 0,
+      "status": "PASSED"
+    },
+    {
+      "suite": "Suite C: ECU Behavioral & Degraded State Machine",
+      "tests_run": 3,
+      "passed": 3,
+      "failed": 0,
+      "status": "PASSED"
+    },
+    {
+      "suite": "Suite D: Secure OTA Update & Automatic Rollback",
+      "tests_run": 7,
+      "passed": 7,
+      "failed": 0,
+      "status": "PASSED"
+    },
+    {
+      "suite": "Suite E: System Integration & Deterministic Replay",
+      "tests_run": 3,
+      "passed": 3,
+      "failed": 0,
+      "status": "PASSED"
+    }
+  ]
+}

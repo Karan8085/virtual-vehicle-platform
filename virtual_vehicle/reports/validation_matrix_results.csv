@@ -1,0 +1,6 @@
+Suite Name,Tests Run,Passed,Failed,Status
+Suite A: CAN / CAN FD Protocol & SecOC,4,4,0,PASSED
+Suite B: Automotive Ethernet & Gateway Routing,5,5,0,PASSED
+Suite C: ECU Behavioral & Degraded State Machine,3,3,0,PASSED
+Suite D: Secure OTA Update & Automatic Rollback,7,7,0,PASSED
+Suite E: System Integration & Deterministic Replay,3,3,0,PASSED
